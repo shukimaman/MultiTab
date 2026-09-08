@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>לוח הכפל</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>לוח הכפל 🧮</h1>
+      <p class="subtitle">תרגלו את לוח הכפל וראו את ההתקדמות שלכם</p>
+    </header>
+
+    <section class="stats">
+      <div class="stat correct">
+        <span class="stat-label">הצלחות</span>
+        <span class="stat-value" id="correctCount">0</span>
+      </div>
+      <div class="stat wrong">
+        <span class="stat-label">כישלונות</span>
+        <span class="stat-value" id="wrongCount">0</span>
+      </div>
+      <div class="stat total">
+        <span class="stat-label">סה"כ תרגילים</span>
+        <span class="stat-value" id="totalCount">0</span>
+      </div>
+    </section>
+
+    <section class="quiz-card" id="quizCard">
+      <div class="question" id="question">? × ? = ?</div>
+      <form id="answerForm" autocomplete="off">
+        <input
+          type="number"
+          id="answerInput"
+          placeholder="התשובה שלך"
+          inputmode="numeric"
+          required
+        />
+        <button type="submit">בדוק</button>
+      </form>
+      <div class="feedback" id="feedback"></div>
+    </section>
+
+    <section class="settings">
+      <label for="rangeSelect">טווח מספרים:</label>
+      <select id="rangeSelect">
+        <option value="5">1 עד 5</option>
+        <option value="10" selected>1 עד 10</option>
+        <option value="12">1 עד 12</option>
+      </select>
+      <button id="resetBtn" class="secondary-btn">אפס נתונים</button>
+    </section>
+
+    <section class="history">
+      <h2>היסטוריית תרגילים</h2>
+      <div class="history-list" id="historyList">
+        <p class="empty-history">עדיין לא ביצעתם תרגילים.</p>
+      </div>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

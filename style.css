@@ -1,0 +1,256 @@
+:root {
+  --bg: #f4f6fb;
+  --card-bg: #ffffff;
+  --text: #1f2430;
+  --muted: #6b7280;
+  --primary: #4f6df5;
+  --primary-dark: #3b54d6;
+  --success: #1c9c63;
+  --success-bg: #e6f8ee;
+  --danger: #e0473e;
+  --danger-bg: #fdecea;
+  --border: #e5e8f0;
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(31, 36, 48, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(180deg, #eef1fb 0%, #f4f6fb 100%);
+  color: var(--text);
+  font-family: "Segoe UI", "Heebo", "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 32px 16px 64px;
+}
+
+.app {
+  width: 100%;
+  max-width: 520px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+h1 {
+  margin: 0 0 4px;
+  font-size: 2rem;
+}
+
+.subtitle {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.stat {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px 8px;
+  text-align: center;
+}
+
+.stat-label {
+  display: block;
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+.stat-value {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.stat.correct .stat-value {
+  color: var(--success);
+}
+
+.stat.wrong .stat-value {
+  color: var(--danger);
+}
+
+.stat.total .stat-value {
+  color: var(--primary);
+}
+
+.quiz-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 28px 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.question {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+#answerForm {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+#answerInput {
+  width: 140px;
+  font-size: 1.2rem;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 2px solid var(--border);
+  text-align: center;
+  transition: border-color 0.15s ease;
+}
+
+#answerInput:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 20px;
+  background: var(--primary);
+  color: #fff;
+  transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background: var(--primary-dark);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.feedback {
+  min-height: 28px;
+  margin-top: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.feedback.correct {
+  color: var(--success);
+}
+
+.feedback.wrong {
+  color: var(--danger);
+}
+
+.settings {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.settings label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.settings select {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  font-size: 0.95rem;
+  background: var(--card-bg);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: var(--danger);
+  border: 2px solid var(--danger-bg);
+  padding: 6px 14px;
+}
+
+.secondary-btn:hover {
+  background: var(--danger-bg);
+}
+
+.history h2 {
+  font-size: 1.15rem;
+  margin-bottom: 10px;
+}
+
+.history-list {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  max-height: 340px;
+  overflow-y: auto;
+}
+
+.empty-history {
+  color: var(--muted);
+  text-align: center;
+  padding: 24px;
+  margin: 0;
+}
+
+.history-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+
+.history-item:last-child {
+  border-bottom: none;
+}
+
+.history-item .expr {
+  font-weight: 600;
+  flex: 1;
+}
+
+.history-item .given-answer {
+  color: var(--muted);
+}
+
+.history-item .badge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.history-item.correct .badge {
+  color: var(--success);
+  background: var(--success-bg);
+}
+
+.history-item.wrong .badge {
+  color: var(--danger);
+  background: var(--danger-bg);
+}
