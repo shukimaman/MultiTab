@@ -9,8 +9,8 @@
 <body>
   <div class="app">
     <header>
-      <h1>לוח הכפל 🧮</h1>
-      <p class="subtitle">תרגלו את לוח הכפל וראו את ההתקדמות שלכם</p>
+      <h1 id="pageTitle">לוח הכפל 🧮</h1>
+      <p class="subtitle" id="pageSubtitle">תרגלו כפל וראו את ההתקדמות שלכם</p>
     </header>
 
     <section class="stats">
@@ -44,6 +44,13 @@
     </section>
 
     <section class="settings">
+      <label for="operationSelect">סוג התרגיל:</label>
+      <select id="operationSelect">
+        <option value="add">חיבור (+)</option>
+        <option value="sub">חיסור (−)</option>
+        <option value="mul" selected>כפל (×)</option>
+        <option value="div">חילוק (÷)</option>
+      </select>
       <label for="rangeSelect">טווח מספרים:</label>
       <select id="rangeSelect">
         <option value="5">1 עד 5</option>
